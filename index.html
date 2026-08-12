@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hojalatería Juan Jofre e Hijos | Techumbre y hojalatería en Maipú</title>
+<meta name="description" content="Hojalatería, arreglo y fabricación de techumbre en Maipú, Santiago. Canaletas, forros, cubiertas y reparación de filtraciones.">
+
+<!-- ============================================================
+     GUÍA RÁPIDA PARA EDITAR ESTE SITIO (léela antes de tocar nada)
+     1. Servicios: busca "SECCIÓN SERVICIOS" más abajo, cada uno es
+        un bloque <div class="servicio-card">.
+     2. Fotos: busca "SECCIÓN GALERÍA". Cada trabajo es un objeto
+        dentro de la lista PROYECTOS en el <script> al final.
+        Por ahora usan un color de fondo en vez de foto real.
+        Cuando tengas fotos, sigue las instrucciones marcadas ahí.
+     3. Teléfono/WhatsApp: aparece varias veces, búscalo con Ctrl+F
+        usando "56937682242" para cambiarlo en todos lados a la vez.
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --charcoal:#20242a;
+    --charcoal-2:#2b3038;
+    --zinc:#9aa5ad;
+    --zinc-light:#e7e9ea;
+    --paper:#f2f1ec;
+    --safety:#f4a825;
+    --safety-dark:#c9840f;
+    --text-dark:#20242a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Work Sans',sans-serif;
+    color:var(--text-dark);
+    background:var(--paper);
+    line-height:1.5;
+  }
+  h1,h2,h3,.brand{
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  /* franja corrugada — evoca una plancha de zinc acanalada */
+  .corrugated{
+    height:14px;
+    background:repeating-linear-gradient(
+      90deg,
+      var(--zinc) 0px, var(--zinc) 6px,
+      #7f8990 6px, #7f8990 8px,
+      var(--zinc-light) 8px, var(--zinc-light) 14px,
+      #b8c0c6 14px, #b8c0c6 16px
+    );
+  }
+
+  /* HEADER */
+  header{
+    background:var(--charcoal);
+    color:var(--zinc-light);
+    position:sticky;top:0;z-index:50;
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 24px;max-width:1100px;margin:0 auto;
+  }
+  .brand{color:#fff;font-size:1.15rem;font-weight:600;}
+  .brand span{color:var(--safety);}
+  .nav-links{display:flex;gap:28px;font-size:0.92rem;letter-spacing:0.03em;text-transform:uppercase;}
+  .nav-links a:hover{color:var(--safety);}
+  .nav-cta{
+    background:var(--safety);color:var(--charcoal);
+    padding:9px 18px;border-radius:2px;font-weight:600;
+    font-size:0.9rem;letter-spacing:0.03em;
+  }
+  .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;}
+
+  /* HERO */
+  .hero{
+    background:var(--charcoal);
+    color:#fff;
+    padding:64px 0 72px;
+  }
+  .hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;}
+  .eyebrow{
+    color:var(--safety);font-size:0.85rem;font-weight:600;
+    letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;
+  }
+  .hero h1{font-size:2.6rem;line-height:1.08;margin-bottom:18px;}
+  .hero p{color:var(--zinc-light);font-size:1.05rem;max-width:46ch;margin-bottom:28px;}
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 24px;font-weight:600;font-size:0.95rem;
+    letter-spacing:0.02em;border-radius:2px;
+  }
+  .btn-primary{background:var(--safety);color:var(--charcoal);}
+  .btn-primary:hover{background:var(--safety-dark);}
+  .btn-outline{border:1.5px solid var(--zinc);color:#fff;}
+  .btn-outline:hover{border-color:#fff;}
+  .hero-panel{
+    background:var(--charcoal-2);
+    border:1px solid #3a4048;
+    padding:26px;border-radius:4px;
+  }
+  .hero-panel h3{color:var(--safety);font-size:1rem;margin-bottom:14px;}
+  .hero-panel ul{list-style:none;font-size:0.94rem;color:var(--zinc-light);}
+  .hero-panel li{padding:7px 0;border-bottom:1px solid #3a4048;}
+  .hero-panel li:last-child{border-bottom:none;}
+
+  /* SECCIONES GENERALES */
+  section{padding:64px 0;}
+  .section-head{margin-bottom:36px;}
+  .section-head .eyebrow{color:var(--safety-dark);}
+  .section-head h2{font-size:1.9rem;color:var(--charcoal);}
+
+  /* SERVICIOS */
+  .servicios-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+  }
+  .servicio-card{
+    background:#fff;border:1px solid #ddd8cc;border-radius:4px;
+    padding:22px;border-top:3px solid var(--safety);
+  }
+  .servicio-card h3{font-size:1.02rem;color:var(--charcoal);margin-bottom:8px;text-transform:none;font-family:'Work Sans',sans-serif;font-weight:600;}
+  .servicio-card p{font-size:0.9rem;color:#5a5a52;}
+
+  /* GALERÍA */
+  .galeria-section{background:var(--charcoal-2);color:#fff;}
+  .galeria-section .section-head h2{color:#fff;}
+  .filtros{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px;}
+  .filtro-btn{
+    background:transparent;border:1.5px solid var(--zinc);color:var(--zinc-light);
+    padding:8px 16px;border-radius:20px;font-size:0.85rem;cursor:pointer;
+    font-family:'Work Sans',sans-serif;letter-spacing:0.02em;
+  }
+  .filtro-btn.activo,.filtro-btn:hover{background:var(--safety);border-color:var(--safety);color:var(--charcoal);font-weight:600;}
+  .galeria-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+  }
+  .proyecto-card{
+    border-radius:4px;overflow:hidden;background:var(--charcoal);
+    border:1px solid #3a4048;
+  }
+  .proyecto-img{
+    height:160px;display:flex;align-items:center;justify-content:center;
+    color:rgba(255,255,255,0.55);font-size:0.8rem;text-align:center;padding:12px;
+  }
+  .proyecto-info{padding:14px 16px;}
+  .proyecto-info .cat{color:var(--safety);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;font-weight:600;}
+  .proyecto-info h4{font-size:0.95rem;margin-top:4px;font-weight:500;font-family:'Work Sans',sans-serif;}
+  .oculto{display:none;}
+
+  /* CONTACTO */
+  .contacto .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .contacto-item{margin-bottom:18px;}
+  .contacto-item .label{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--safety-dark);font-weight:600;margin-bottom:4px;}
+  .contacto-item .val{font-size:1.05rem;}
+  .contacto-form{background:#fff;border:1px solid #ddd8cc;border-radius:4px;padding:26px;}
+  .contacto-form label{display:block;font-size:0.85rem;font-weight:600;margin:14px 0 6px;}
+  .contacto-form input,.contacto-form textarea{
+    width:100%;padding:10px 12px;border:1px solid #ccc5b3;border-radius:3px;
+    font-family:'Work Sans',sans-serif;font-size:0.92rem;
+  }
+  .contacto-form button{margin-top:18px;width:100%;border:none;cursor:pointer;}
+
+  footer{background:var(--charcoal);color:var(--zinc);padding:30px 0;text-align:center;font-size:0.85rem;}
+  footer a{color:var(--safety);}
+
+  .whatsapp-float{
+    position:fixed;bottom:22px;right:22px;background:#25D366;color:#fff;
+    width:56px;height:56px;border-radius:50%;display:flex;align-items:center;
+    justify-content:center;font-size:1.6rem;box-shadow:0 4px 14px rgba(0,0,0,0.3);
+    z-index:60;
+  }
+
+  @media (max-width:800px){
+    .nav-links,.nav-cta{display:none;}
+    .nav-toggle{display:block;}
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero h1{font-size:2rem;}
+    .contacto .wrap{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="corrugated"></div>
+<header>
+  <nav class="nav">
+    <a href="#" class="brand">Juan Jofre <span>e Hijos</span></a>
+    <div class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Trabajos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a class="nav-cta" href="https://wa.me/56937682242" target="_blank">WhatsApp</a>
+    <button class="nav-toggle">☰</button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Hojalatería &amp; Techumbre · Maipú</div>
+      <h1>Techos, canaletas y planchas trabajadas con oficio de familia</h1>
+      <p>Hojalatería completa, además de arreglo y fabricación de techumbre. Presupuesto sin costo y trabajo garantizado.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://wa.me/56937682242" target="_blank">Cotizar por WhatsApp</a>
+        <a class="btn btn-outline" href="tel:+56937682242">Llamar +56 9 3768 2242</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <h3>Atención directa</h3>
+      <ul>
+        <li>📞 +56 9 3768 2242</li>
+        <li>📍 Maipú, Santiago</li>
+        <li>🕑 Presupuesto sin costo</li>
+        <li>🔧 Trabajo garantizado</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<div class="corrugated"></div>
+
+<!-- ================= SECCIÓN SERVICIOS =================
+     Para agregar un servicio nuevo, copia un bloque completo
+     <div class="servicio-card">...</div> y cambia el texto. -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Lo que hacemos</div>
+      <h2>Servicios</h2>
+    </div>
+    <div class="servicios-grid">
+      <div class="servicio-card">
+        <h3>Fabricación de techumbre</h3>
+        <p>Techos nuevos en zinc, planchas prepintadas y estructuras metálicas a medida.</p>
+      </div>
+      <div class="servicio-card">
+        <h3>Arreglo y reparación de techumbre</h3>
+        <p>Reparación de filtraciones, cambio de planchas dañadas y mantención preventiva.</p>
+      </div>
+      <div class="servicio-card">
+        <h3>Canaletas y bajadas de agua</h3>
+        <p>Instalación, limpieza y reparación de canaletas para evitar filtraciones.</p>
+      </div>
+      <div class="servicio-card">
+        <h3>Forros y revestimientos</h3>
+        <p>Forros de muros, aleros y estructuras en plancha metálica.</p>
+      </div>
+      <div class="servicio-card">
+        <h3>Cumbreras y limahoyas</h3>
+        <p>Fabricación e instalación de piezas de terminación para techos.</p>
+      </div>
+      <div class="servicio-card">
+        <h3>Hojalatería general</h3>
+        <p>Trabajos en plancha metálica a medida para proyectos particulares y comerciales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECCIÓN GALERÍA =================
+     Por ahora los "trabajos" son solo un color + texto, no fotos.
+     Cuando tengas fotos reales:
+       1. Guarda las imágenes dentro de la carpeta /img
+          (ej: img/techo-la-florida.jpg)
+       2. En la lista PROYECTOS del <script> al final, agrega
+          "foto: 'img/techo-la-florida.jpg'" a cada proyecto
+       3. Avísame y te actualizo el HTML para que muestre la
+          foto real en vez del color de fondo.
+     Las categorías (Techumbre, Canaletas, Forros, Otros) ya están
+     listas: solo usa esas mismas palabras en "categoria" al
+     agregar un proyecto nuevo y el filtro lo ordena solo. -->
+<section id="galeria" class="galeria-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Nuestro trabajo</div>
+      <h2>Proyectos realizados</h2>
+    </div>
+    <div class="filtros" id="filtros"></div>
+    <div class="galeria-grid" id="galeriaGrid"></div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="contacto">
+  <div class="wrap">
+    <div>
+      <div class="section-head">
+        <div class="eyebrow">Hablemos</div>
+        <h2>Contacto</h2>
+      </div>
+      <div class="contacto-item">
+        <div class="label">Teléfono / WhatsApp</div>
+        <div class="val"><a href="tel:+56937682242">+56 9 3768 2242</a></div>
+      </div>
+      <div class="contacto-item">
+        <div class="label">Zona de trabajo</div>
+        <div class="val">Maipú y comunas cercanas, Santiago</div>
+      </div>
+      <div class="contacto-item">
+        <div class="label">Presupuestos</div>
+        <div class="val">Sin costo, a domicilio</div>
+      </div>
+      <a class="btn btn-primary" style="margin-top:10px" href="https://wa.me/56937682242" target="_blank">Escribir por WhatsApp</a>
+    </div>
+    <form class="contacto-form" onsubmit="return enviarWhatsapp(event)">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" type="text" required>
+      <label for="mensaje">Cuéntanos qué necesitas</label>
+      <textarea id="mensaje" rows="4" required></textarea>
+      <button class="btn btn-primary" type="submit">Enviar mensaje por WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Hojalatería Juan Jofre e Hijos · Maipú, Santiago · <a href="tel:+56937682242">+56 9 3768 2242</a>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/56937682242" target="_blank" title="Escríbenos por WhatsApp">📱</a>
+
+<script>
+  // ===================== PROYECTOS =====================
+  // Edita esta lista para agregar/quitar trabajos de la galería.
+  // categoria debe ser una de: "Techumbre", "Canaletas", "Forros", "Otros"
+  // color es solo el color de fondo mientras no hay foto real.
+  const PROYECTOS = [
+    { titulo:"Techo nuevo, casa particular", categoria:"Techumbre", color:"#4a5560" },
+    { titulo:"Reparación de filtración", categoria:"Techumbre", color:"#5b6b73" },
+    { titulo:"Canaletas casa de dos pisos", categoria:"Canaletas", color:"#3f4a52" },
+    { titulo:"Bajadas de agua local comercial", categoria:"Canaletas", color:"#4a5560" },
+    { titulo:"Forro de muro exterior", categoria:"Forros", color:"#5b6b73" },
+    { titulo:"Alero forrado en zinc", categoria:"Forros", color:"#3f4a52" },
+  ];
+
+  const categorias = ["Todos", ...new Set(PROYECTOS.map(p => p.categoria))];
+  const filtrosEl = document.getElementById("filtros");
+  const gridEl = document.getElementById("galeriaGrid");
+
+  categorias.forEach((cat, i) => {
+    const b = document.createElement("button");
+    b.className = "filtro-btn" + (i === 0 ? " activo" : "");
+    b.textContent = cat;
+    b.onclick = () => {
+      document.querySelectorAll(".filtro-btn").forEach(x => x.classList.remove("activo"));
+      b.classList.add("activo");
+      renderGaleria(cat);
+    };
+    filtrosEl.appendChild(b);
+  });
+
+  function renderGaleria(filtro) {
+    gridEl.innerHTML = "";
+    PROYECTOS
+      .filter(p => filtro === "Todos" || p.categoria === filtro)
+      .forEach(p => {
+        const card = document.createElement("div");
+        card.className = "proyecto-card";
+        card.innerHTML = `
+          <div class="proyecto-img" style="background:${p.color}">
+            [ Foto pendiente — reemplazar en la lista PROYECTOS ]
+          </div>
+          <div class="proyecto-info">
+            <div class="cat">${p.categoria}</div>
+            <h4>${p.titulo}</h4>
+          </div>`;
+        gridEl.appendChild(card);
+      });
+  }
+  renderGaleria("Todos");
+
+  function enviarWhatsapp(e){
+    e.preventDefault();
+    const nombre = document.getElementById("nombre").value;
+    const mensaje = document.getElementById("mensaje").value;
+    const texto = encodeURIComponent(`Hola, soy ${nombre}. ${mensaje}`);
+    window.open(`https://wa.me/56937682242?text=${texto}`, "_blank");
+    return false;
+  }
+</script>
+
+</body>
+</html>
